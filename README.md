@@ -1,4 +1,4 @@
-# Setup
+# YetAnotherMusicPlayerDaemonVRChatDiscordRichPresenceClient
 
 ## Using Precompiled binary
 1. Download from releases tab
