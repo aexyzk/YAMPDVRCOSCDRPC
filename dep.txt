@@ -1,0 +1,3 @@
+pypresence
+python-osc
+python-mpd2
