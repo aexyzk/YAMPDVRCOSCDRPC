@@ -22,7 +22,7 @@ def send_discord(id, addr, port):
                     presence.set(
                         {
                             "details": f"{music[0]}",
-                            "state": f"{music[1]}",
+                            "state": f"by {music[1]}",
                         }
                     )
             else:
