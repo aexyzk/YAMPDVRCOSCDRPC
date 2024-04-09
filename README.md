@@ -9,7 +9,6 @@
 4. Go to settings and setup all addresses and ports this is default, perfect if you are running VRchat and MPD on the same computer, but for standalone VRChat or more complicated MPD setups you may have to change these in the settings
 ```
 settings = {
-    "DiscordID": "",
     "MPD Address": "localhost",
     "MPD Port": 6600,
     "VRchat OSC Address": "localhost",
@@ -20,7 +19,7 @@ settings = {
 
 ---
 
-## Reqired For Discord)
+## Reqired For Discord (If running from source)
 1. Go to Discord Dev Hub https://discord.com/developers/applications
 2. Create a new app
 3. Copy the Client ID
