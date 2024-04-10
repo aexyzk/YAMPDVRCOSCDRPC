@@ -5,7 +5,7 @@
 2. Unzip it
 3. Double click it!
  - (If you're on linux run 'chmod +x main' while in the folder)
- - (If you're on windows, windows defender might see it as a virus idk why)
+ - (If you're on windows, windows defender might see it as a virus, this is a bug with pyinstaller)
 4. Go to settings and setup all addresses and ports this is default, perfect if you are running VRchat and MPD on the same computer, but for standalone VRChat or more complicated MPD setups you may have to change these in the settings
 ```
 settings = {
