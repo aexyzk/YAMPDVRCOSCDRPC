@@ -1,3 +1,4 @@
 discord-rich-presence
 python-osc
 python-mpd2
+BeautifulSoup

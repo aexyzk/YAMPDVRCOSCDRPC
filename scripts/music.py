@@ -14,17 +14,17 @@ def get_music(addr, port):
 
         if bool(song):
             if status["state"] == "pause":
-                artist = song.get('artist', '')
-                title = song.get('title', '')
                 toggle ="⏸️"
             else:
-                artist = song.get('artist', '')
-                title = song.get('title', '')
                 toggle = f"▶️"
+
+            artist = song.get('artist', '')
+            title = song.get('title', '')
+            album = song.get('album', '')
         else:
             return ('', '', '', "No songs in queue")
             
     except ConnectionError:
         return ('', '', '', "MPD Offline")
 
-    return (title, artist, toggle, err)
+    return (title, artist, toggle, err, album)
