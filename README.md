@@ -17,7 +17,17 @@ settings = {
 ```
 5. Then you can run it :]
 
+## QnA
+ - Where exe?
+  *im getting a windows vm to publish windows binaries*
+
 ---
+
+## (Running from source)
+1. Install Python (I used 3.11)
+2. Decompress the .zip
+3. Use a Terminal (Powershell, Alacritty, Konsole, etc), to navigate to the main folder.
+4. Run `python3 ./main.py` to open the python file.
 
 ## Reqired For Discord (If running from source)
 1. Go to Discord Dev Hub https://discord.com/developers/applications
@@ -25,12 +35,6 @@ settings = {
 3. Copy the Client ID
 4. Go to "Settings"
 5. Set your Discord RPC ID to the one you just copied
-
-## (Running from source)
-1. Install Python (I used 3.11)
-2. Decompress the .zip
-3. Use a Terminal (Powershell, Alacritty, Konsole, etc), to navigate to the main folder.
-4. Run `python3 ./main.py` to open the python file.
 
 ### (You can change your addresses for MPD and OSC (for quest or any other standalone vrchat) in the settings)
 
