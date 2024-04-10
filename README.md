@@ -1,4 +1,4 @@
-# YetAnotherMusicPlayerDaemonVRChatOpenSoundControlDiscordRichPresenceClient
+# Yet Another MPD VRChat OSC Discord RPC Status thingy
 
 ## Using Precompiled binary
 1. Download from releases tab
