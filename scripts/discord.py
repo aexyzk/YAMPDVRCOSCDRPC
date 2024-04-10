@@ -4,8 +4,7 @@ import time
 from scripts.image_collector import find_image
 from scripts.music import get_music
 
-#id = "SET YOUR DISCORD APPLICATION ID HERE"
-id = "1223344645908729867"
+id = "SET YOUR DISCORD APPLICATION ID HERE"
 # https://discord.com/developers/applications
 
 def send_discord(addr, port):
