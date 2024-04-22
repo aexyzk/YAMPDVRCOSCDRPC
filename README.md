@@ -1,5 +1,7 @@
 # Yet Another MPD VRChat OSC Discord RPC Status thingy
 
+### Kinda buggy, working on fixes
+
 ## Using Precompiled binary
 1. Download from releases tab
 2. Unzip it
