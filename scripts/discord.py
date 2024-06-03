@@ -3,7 +3,7 @@ import time
 
 from scripts.music import get_music
 
-id = "1223344645908729867"
+id = "DISCORDIDHERE"
 
 def send_discord(addr, port):
     with Presence(id) as presence:
