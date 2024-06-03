@@ -1,11 +1,9 @@
 from threading import Thread
 from scripts.vrchat import send_vrchat as vrc
-from scripts.discord import send_discord as dis
+from scripts.discord import connect_to_discord as dis
 import subprocess, os
 import json
-
-def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
+import sys
 
 global settings
 settings = {
@@ -37,82 +35,24 @@ def discord_thread():
     dis(settings['MPD Address'], settings['MPD Port'])
 
 def main():
-    clear()
-    choice = 0
-    while choice != 5:
-        while choice == 4:
-            settings_choice = 0
-            print("*** Settings ***")
-            print(f"(1) Change Your MPD Address - current: {str(settings['MPD Address'])}")
-            print(f"(2) Change Your MPD Port - current: {str(settings['MPD Port'])}")
-            print(f"(3) Change Your VRchat OSC Address - current: {str(settings['VRchat OSC Address'])}")
-            print(f"(4) Change Your VRchat OSC Port - current: {str(settings['VRchat OSC Port'])}")
-            print("(5) Main Menu")
-            settings_choice = int(input())
-
-            if settings_choice == 1:
-                addr = input("Enter new MPD Address Here: ")
-                settings["MPD Address"] = addr
-                save_settings()
-                print("Saved!")
-
-            if settings_choice == 2:
-                try:
-                    port = abs(int(input("Enter new MPD Port Here: ")))
-                    settings["MPD Port"] = port
-                    save_settings()
-                    print("Saved!")
-                except ValueError:
-                    print("Error: E003: please make sure you enter a number (int) as ports are numbers :3")
-
-            if settings_choice == 3:
-                addr = input("Enter new VRchat OSC Address Here: ")
-                settings["VRchat OSC Address"] = addr
-                save_settings()
-                print("Saved!")
-
-            if settings_choice == 4:
-                try:
-                    port = abs(int(input("Enter new VRchat OSC Port Here: ")))
-                    settings["VRchat OSC Port"] = port
-                    save_settings()
-                    print("Saved!")
-                except ValueError:
-                    print("Error: E003: please make sure you enter a number (int) as ports are numbers :3")
-
-            if settings_choice == 5:
-                save_settings()
-                clear()
-                choice = 0
-        print("*** Discord and VRChat Presence ***")
-        print("(1) Start Both")
-        print("(2) Start VRChat OSC")
-        print("(3) Start Discord RPC")
-        print("(4) Settings")
-        print("(5) Exit")
-        choice = int(input())
-
-        if choice == 1:
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "--discord":
+            print("Starting Discord RPC...")
+            discord_thread()
+        if sys.argv[1] == "--vrchat":
+            print("Starting VRChat OSC...")
+            vrchat_thread()
+        if sys.argv[1] == "--help":
+            print("no args #lauch both vrchat thread and discord thread\n--discord #runs only the discord thread\n--vrchat #runs only the vrchat thread\n--help shows this\nthe config file is located in the same directory 'settings.json'")
+    else:
+        try:
             print("Starting VRChat OSC, Starting Discord RPC...")
-            clear()
             Thread(target = vrchat_thread).start()
             Thread(target = discord_thread).start()
-
-        if choice == 2:
-            print("Starting VRChat OSC...")
-            clear()
-            vrchat_thread()
-
-        if choice == 3:
-            print("Starting Discord RPC...")
-            clear()
-            discord_thread()
-
-        if choice == 4:
-            clear()
+        except KeyboardInterrupt:
+            exit()
 
 if __name__ == "__main__":
     main()
 
 save_settings()
-clear()
