@@ -16,6 +16,13 @@
 5. Then you can run it :]
    - (for Linux i recommend having it startup with MPD, as it's finally reliable enough to run without crashing)
    - (i don't know how to make stuff start by default on windows)
+6. Arguments
+```
+  no args #lauch both vrchat thread and discord thread
+  --discord #runs only the discord thread
+  --vrchat #runs only the vrchat thread
+  --help #this shows info
+```
 
 ---
 
