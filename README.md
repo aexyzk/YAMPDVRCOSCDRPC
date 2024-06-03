@@ -31,7 +31,7 @@
 2. Decompress the .zip
 3. Install dependencies 'deps.txt' and 'pyinstaller' using pip 
 4. Use a Terminal (Alacritty, Konsole, Powershell, etc), to navigate to the main folder.
-5. Run `pyinstaller main.py --onefile` to open the python file.
+5. Run `pyinstaller main.py --onefile` to build the executable file to the dist folder.
 
 ## Reqired For Discord (If running from source)
 1. Go to Discord Dev Hub https://discord.com/developers/applications
