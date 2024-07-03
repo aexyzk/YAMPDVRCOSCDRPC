@@ -6,7 +6,7 @@
 3. Run it!
  - (If you're on linux run 'chmod +x main' while in the folder, to allow it to be executable)
  - (If you're on windows, windows defender might see it as a virus)
-4. Go to 'settings.json' (this will be in the same folder as the executable if you run the program once) and setup all addresses and ports this is default, perfect if you are running VRChat and MPD on the same computer, but for standalone VRChat or more complicated MPD setups you may have to change these in the config file
+4. Go to 'mpd-osc-rpc.json' (this will be in the same folder as the executable if you run the program once, on windows, on linux its in ~/.config/mpd-osc-rpc.json) and setup all addresses and ports this is default, perfect if you are running VRChat and MPD on the same computer, but for standalone VRChat or more complicated MPD setups you may have to change these in the config file
 ```
     "MPD Address": "localhost",
     "MPD Port": 6600,
@@ -40,7 +40,7 @@
 4. Use a Terminal (Alacritty, Konsole, Powershell, etc), to navigate to the main folder.
 5. Run `pyinstaller main.py --onefile` to build the executable file to the dist folder.
 
-## Reqired For Discord (If running from source)
+## Required For Discord (if you wanna rename the RPC)
 1. Go to Discord Dev Hub https://discord.com/developers/applications
 2. Create a new app
 3. Copy the Client ID
