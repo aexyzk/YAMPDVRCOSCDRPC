@@ -14,11 +14,24 @@ settings = {
 }
 
 def save_settings():
-    with open('settings.json', 'w') as f:
-        json.dump(settings, f)
+    if os.name == 'nt':
+        with open('settings.json', 'w') as f:
+            json.dump(settings, f)
+    else:
+        with open(os.path.join(os.path.expanduser('~'), ".config", 'mpd-osc-rpc.json'), 'w') as f:
+            json.dump(settings, f)
 
 def load_settings():
     try:
+        if os.name == 'nt':
+            with open('settings.json', 'r') as f:
+                loaded_settings = json.load(f)
+                settings.update(loaded_settings)
+                print("Loaded Settings Successfully!")
+            with open(os.path.join(os.path.expanduser('~'), ".config", 'mpd-osc-rpc.json'), 'r') as f:
+                loaded_settings = json.load(f)
+                settings.update(loaded_settings)
+                print("Loaded Settings Successfully!")
         with open('settings.json', 'r') as f:
             loaded_settings = json.load(f)
             settings.update(loaded_settings)
